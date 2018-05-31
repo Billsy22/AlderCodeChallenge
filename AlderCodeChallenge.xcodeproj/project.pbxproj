@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1601211720C0C0CE00C5EC98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1601211620C0C0CE00C5EC98 /* AppDelegate.swift */; };
-		1601211920C0C0CE00C5EC98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1601211820C0C0CE00C5EC98 /* ViewController.swift */; };
 		1601211C20C0C0CE00C5EC98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1601211A20C0C0CE00C5EC98 /* Main.storyboard */; };
 		1601211E20C0C0CF00C5EC98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1601211D20C0C0CF00C5EC98 /* Assets.xcassets */; };
 		1601212120C0C0CF00C5EC98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1601211F20C0C0CF00C5EC98 /* LaunchScreen.storyboard */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		1601211320C0C0CE00C5EC98 /* AlderCodeChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlderCodeChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1601211620C0C0CE00C5EC98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1601211820C0C0CE00C5EC98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1601211B20C0C0CE00C5EC98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1601211D20C0C0CF00C5EC98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1601212020C0C0CF00C5EC98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +52,29 @@
 		1601211520C0C0CE00C5EC98 /* AlderCodeChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				1601211620C0C0CE00C5EC98 /* AppDelegate.swift */,
-				1601211820C0C0CE00C5EC98 /* ViewController.swift */,
-				1601211A20C0C0CE00C5EC98 /* Main.storyboard */,
-				1601211D20C0C0CF00C5EC98 /* Assets.xcassets */,
-				1601211F20C0C0CF00C5EC98 /* LaunchScreen.storyboard */,
-				1601212220C0C0CF00C5EC98 /* Info.plist */,
+				1601212920C0C22100C5EC98 /* Views */,
+				1601212820C0C20F00C5EC98 /* Resources */,
 			);
 			path = AlderCodeChallenge;
+			sourceTree = "<group>";
+		};
+		1601212820C0C20F00C5EC98 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1601211620C0C0CE00C5EC98 /* AppDelegate.swift */,
+				1601211D20C0C0CF00C5EC98 /* Assets.xcassets */,
+				1601212220C0C0CF00C5EC98 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1601212920C0C22100C5EC98 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1601211A20C0C0CE00C5EC98 /* Main.storyboard */,
+				1601211F20C0C0CF00C5EC98 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +148,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1601211920C0C0CE00C5EC98 /* ViewController.swift in Sources */,
 				1601211720C0C0CE00C5EC98 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
