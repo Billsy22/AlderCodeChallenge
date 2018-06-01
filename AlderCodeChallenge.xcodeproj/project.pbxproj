@@ -11,6 +11,7 @@
 		1601211C20C0C0CE00C5EC98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1601211A20C0C0CE00C5EC98 /* Main.storyboard */; };
 		1601211E20C0C0CF00C5EC98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1601211D20C0C0CF00C5EC98 /* Assets.xcassets */; };
 		1601212120C0C0CF00C5EC98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1601211F20C0C0CF00C5EC98 /* LaunchScreen.storyboard */; };
+		16CF55D920C1F546002EBB91 /* StarWarsCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CF55D820C1F546002EBB91 /* StarWarsCharacter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		1601211D20C0C0CF00C5EC98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1601212020C0C0CF00C5EC98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1601212220C0C0CF00C5EC98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16CF55D820C1F546002EBB91 /* StarWarsCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCharacter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,9 @@
 		1601211520C0C0CE00C5EC98 /* AlderCodeChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				16CF55D720C1F520002EBB91 /* Model */,
+				16CF55D620C1F513002EBB91 /* Model Controllers */,
+				16CF55D520C1F50A002EBB91 /* View Controllers */,
 				1601212920C0C22100C5EC98 /* Views */,
 				1601212820C0C20F00C5EC98 /* Resources */,
 			);
@@ -75,6 +80,28 @@
 				1601211F20C0C0CF00C5EC98 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		16CF55D520C1F50A002EBB91 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		16CF55D620C1F513002EBB91 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		16CF55D720C1F520002EBB91 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				16CF55D820C1F546002EBB91 /* StarWarsCharacter.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16CF55D920C1F546002EBB91 /* StarWarsCharacter.swift in Sources */,
 				1601211720C0C0CE00C5EC98 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,7 +322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NZ5N56B84J;
-				INFOPLIST_FILE = AlderCodeChallenge/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AlderCodeChallenge/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NZ5N56B84J;
-				INFOPLIST_FILE = AlderCodeChallenge/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AlderCodeChallenge/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
