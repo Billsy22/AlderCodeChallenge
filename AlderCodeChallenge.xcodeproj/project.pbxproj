@@ -16,6 +16,7 @@
 		16CF55DD20C202B5002EBB91 /* StarWarsCharacterPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CF55DC20C202B5002EBB91 /* StarWarsCharacterPersistence.swift */; };
 		16CF55DF20C206AF002EBB91 /* CharacterListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CF55DE20C206AF002EBB91 /* CharacterListTableViewController.swift */; };
 		16CF55E120C2075C002EBB91 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CF55E020C2075C002EBB91 /* CharacterDetailViewController.swift */; };
+		16CF55E320C2146F002EBB91 /* CharacterCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CF55E220C2146F002EBB91 /* CharacterCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		16CF55DC20C202B5002EBB91 /* StarWarsCharacterPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCharacterPersistence.swift; sourceTree = "<group>"; };
 		16CF55DE20C206AF002EBB91 /* CharacterListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListTableViewController.swift; sourceTree = "<group>"; };
 		16CF55E020C2075C002EBB91 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		16CF55E220C2146F002EBB91 /* CharacterCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				16CF55DE20C206AF002EBB91 /* CharacterListTableViewController.swift */,
 				16CF55E020C2075C002EBB91 /* CharacterDetailViewController.swift */,
+				16CF55E220C2146F002EBB91 /* CharacterCellTableViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				16CF55DF20C206AF002EBB91 /* CharacterListTableViewController.swift in Sources */,
 				16CF55DD20C202B5002EBB91 /* StarWarsCharacterPersistence.swift in Sources */,
 				1601211720C0C0CE00C5EC98 /* AppDelegate.swift in Sources */,
+				16CF55E320C2146F002EBB91 /* CharacterCellTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

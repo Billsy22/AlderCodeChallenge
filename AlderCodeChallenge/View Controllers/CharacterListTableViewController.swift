@@ -12,6 +12,11 @@ class CharacterListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        StarWarsCharacterNetworkController.shared.fetchCharacterList { (success) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -23,8 +28,12 @@ class CharacterListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath)
         let character = StarWarsCharacterPersistence.shared.characterList[indexPath.row]
-        cell.imageView?.image = StarWarsCharacterNetworkController.shared.fetchProfilePicture(for: character, completion: { (success) in
-            <#code#>
+        
+        StarWarsCharacterNetworkController.shared.fetchProfilePicture(for: character, completion: { (image) in
+            guard let image = image else { return }
+            DispatchQueue.main.async {
+                cell.imageView?.image = image
+            }
         })
         return cell
     }

@@ -26,7 +26,10 @@ class StarWarsCharacterPersistence {
     // Add Character
     func addCharacterWith(id: Int, firstName: String, lastName: String, birthdate: String, profilePicture: String, forceSensitive: Bool, affilitation: String) {
         let newCharacter = StarWarsCharacter(id: id, firstName: firstName, lastName: lastName, birthdate: birthdate, profilePicture: profilePicture, forceSensitive: forceSensitive, affiliation: affilitation)
-        characterList.append(newCharacter)
+        if !characterList.contains(newCharacter) {
+            characterList.append(newCharacter)
+        }
+        saveToPersistence()
     }
     
     // MARK: -  Loading/Saving
