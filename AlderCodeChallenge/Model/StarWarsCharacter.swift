@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct StarWarsCharacter: Codable {
+struct StarWarsCharacter: Codable, Equatable {
     
     // MARK: -  Properties
     let id: Int?
