@@ -12,5 +12,17 @@ class CharacterCellTableViewCell: UITableViewCell {
     
     // MARK: -  Properties
     
-
+    var characterPhoto: UIImage? {
+        didSet {
+            updateImageView()
+        }
+    }
+    @IBOutlet weak var characterProfilePicture: UIImageView!
+    
+    // MARK: -  Helper Methods
+    
+    // Update Image View
+    func updateImageView() {
+        characterProfilePicture.image = characterPhoto
+    }
 }

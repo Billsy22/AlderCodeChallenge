@@ -42,6 +42,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="characterProfilePicture" destination="hrO-sb-2N8" id="4lg-Qy-58z"/>
                                     <segue destination="Bo9-5G-0XP" kind="show" id="alU-0W-TBl"/>
                                 </connections>
                             </tableViewCell>
