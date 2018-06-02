@@ -17,6 +17,7 @@ class CharacterListTableViewController: UITableViewController {
                 print("Characters Fetched")
             }
         }
+        self.tableView.rowHeight = 200
     }
     
     // MARK: - Table view data source
