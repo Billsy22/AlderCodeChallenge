@@ -39,9 +39,7 @@ class StarWarsCharacterPersistence {
     func addImage(image: UIImage, for character: StarWarsCharacter) {
         guard let firstName = character.firstName else { return }
         guard let imageData = UIImagePNGRepresentation(image) else { return }
-        if !imageDictionary.keys.contains(firstName) {
-            imageDictionary.updateValue(imageData, forKey: firstName)
-        }
+        imageDictionary.updateValue(imageData, forKey: firstName)
         saveToPersistence()
     }
     

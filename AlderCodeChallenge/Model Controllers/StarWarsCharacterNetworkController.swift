@@ -32,6 +32,10 @@ class StarWarsCharacterNetworkController {
                 for character in StarWarsCharacterPersistence.shared.characterList {
                     guard let id = character.id, let firstName = character.firstName, let lastName = character.lastName, let birthdate = character.birthdate, let profilePicture = character.profilePicture, let forceSensitive = character.forceSensitive, let affiliation = character.affiliation else { return }
                     StarWarsCharacterPersistence.shared.addCharacterWith(id: id, firstName: firstName, lastName: lastName, birthdate: birthdate, profilePicture: profilePicture, forceSensitive: forceSensitive, affilitation: affiliation)
+                    print("Character \(character.firstName), added")
+                    StarWarsCharacterNetworkController.shared.fetchProfilePicture(for: character, completion: { (profilePic) in
+                        print("Picture added for \(character.firstName)")
+                    })
                 }
             } catch let error {
                 print("Error occured fetching Character List: \(error), \(error.localizedDescription), \(#file)")
@@ -49,7 +53,8 @@ class StarWarsCharacterNetworkController {
             do {
                 if let error = error { throw error }
                 guard let data = data else { print("No Data \(#file)"); return }
-                let profilePic = UIImage(data: data)
+                guard let profilePic = UIImage(data: data) else { return }
+                StarWarsCharacterPersistence.shared.addImage(image: profilePic, for: character)
                 completion(profilePic)
             } catch let error {
                 print("Error occured fetching Character List: \(error.localizedDescription), \(#file)")
