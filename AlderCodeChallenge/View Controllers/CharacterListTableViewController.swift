@@ -10,14 +10,26 @@ import UIKit
 
 class CharacterListTableViewController: UITableViewController {
     
+    // MARK: -  Life Cycles
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if StarWarsCharacterPersistence.shared.characterList.count == 0 {
-            StarWarsCharacterNetworkController.shared.fetchCharacterList { (success) in
-                print("Characters Fetched")
+        StarWarsCharacterNetworkController.shared.fetchCharacterList { (characters) in
+            print("Characters Fetched")
+            if StarWarsCharacterPersistence.shared.imageDictionary.keys.count == 0 {
+                guard let characters = characters else { return }
+                for character in characters {
+                    StarWarsCharacterNetworkController.shared.fetchProfilePicture(for: character, completion: { (image) in
+                        print("Image Fetched")
+                        DispatchQueue.main.sync {
+                            self.tableView.reloadData()
+                        }
+                    })
+                }
             }
         }
         self.tableView.rowHeight = 200
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "Starry Background"))
     }
     
     // MARK: - Table view data source
@@ -30,19 +42,23 @@ class CharacterListTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as? CharacterCellTableViewCell else { return UITableViewCell() }
         let character = StarWarsCharacterPersistence.shared.characterList[indexPath.row]
         guard let firstName = character.firstName else { return UITableViewCell() }
-        guard let characterImageData = StarWarsCharacterPersistence.shared.imageDictionary[firstName] else { return UITableViewCell() }
-        cell.characterPhoto = UIImage(data: characterImageData)
+        guard let imageData = StarWarsCharacterPersistence.shared.imageDictionary[firstName] else { return UITableViewCell() }
+        let image = UIImage(data: imageData)
+        cell.characterPhoto = image
         return cell
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // MARK: - Navigation
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "characterDetail" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let character = StarWarsCharacterPersistence.shared.characterList[indexPath.row]
+            guard let firstName = character.firstName else { return }
+            guard let image = StarWarsCharacterPersistence.shared.imageDictionary[firstName] else { return }
+            guard let characterDetailViewController = segue.destination as? CharacterDetailViewController else { return }
+            characterDetailViewController.image = UIImage(data: image)
+            characterDetailViewController.character = character
+        }
+    }
 }
