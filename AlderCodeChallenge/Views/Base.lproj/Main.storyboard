@@ -28,7 +28,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hrO-sb-2N8">
+                                        <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loading....." translatesAutoresizingMaskIntoConstraints="NO" id="hrO-sb-2N8">
                                             <rect key="frame" x="112" y="4" width="151" height="190"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="hrO-sb-2N8" secondAttribute="height" multiplier="151:190" id="ISI-Su-9Yj"/>
@@ -200,4 +200,7 @@
             <point key="canvasLocation" x="-167.19999999999999" y="203.74812593703149"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Loading....." width="77" height="73"/>
+    </resources>
 </document>

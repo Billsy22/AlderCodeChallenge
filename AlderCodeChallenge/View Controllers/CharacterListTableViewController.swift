@@ -16,17 +16,20 @@ class CharacterListTableViewController: UITableViewController {
         super.viewDidLoad()
         StarWarsCharacterNetworkController.shared.fetchCharacterList { (characters) in
             print("Characters Fetched")
-            if StarWarsCharacterPersistence.shared.imageDictionary.keys.count == 0 {
-                guard let characters = characters else { return }
-                for character in characters {
-                    StarWarsCharacterNetworkController.shared.fetchProfilePicture(for: character, completion: { (image) in
-                        print("Image Fetched")
-                        DispatchQueue.main.sync {
-                            self.tableView.reloadData()
-                        }
-                    })
-                }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
+//            if StarWarsCharacterPersistence.shared.imageDictionary.keys.count != StarWarsCharacterPersistence.shared.characterList.count {
+//                guard let characters = characters else { return }
+//                for character in characters {
+//                    StarWarsCharacterNetworkController.shared.fetchProfilePicture(for: character, completion: { (image) in
+//                        print("Image Fetched")
+//                        DispatchQueue.main.sync {
+//                            self.tableView.reloadData()
+//                        }
+//                    })
+//                }
+//            }
         }
         self.tableView.rowHeight = 200
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "Starry Background"))
@@ -41,10 +44,16 @@ class CharacterListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as? CharacterCellTableViewCell else { return UITableViewCell() }
         let character = StarWarsCharacterPersistence.shared.characterList[indexPath.row]
-        guard let firstName = character.firstName else { return UITableViewCell() }
-        guard let imageData = StarWarsCharacterPersistence.shared.imageDictionary[firstName] else { return UITableViewCell() }
-        let image = UIImage(data: imageData)
-        cell.characterPhoto = image
+        if StarWarsCharacterPersistence.shared.imageDictionary.keys.count != StarWarsCharacterPersistence.shared.characterList.count {
+        StarWarsCharacterNetworkController.shared.fetchProfilePicture(for: character) { (image) in
+            DispatchQueue.main.sync {
+                cell.characterPhoto = image
+                self.tableView.reloadData()
+            }
+        }
+        } else {
+            print("No need to fetch!!!")
+        }
         return cell
     }
     

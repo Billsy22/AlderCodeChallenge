@@ -18,11 +18,14 @@ class CharacterCellTableViewCell: UITableViewCell {
         }
     }
     @IBOutlet weak var characterProfilePicture: UIImageView!
+    @IBOutlet weak var characterPictureActivityIndicatorView: UIActivityIndicatorView!
     
     // MARK: -  Helper Methods
     
     // Update Image View
     func updateImageView() {
-        characterProfilePicture.image = characterPhoto
+        DispatchQueue.main.async {
+            self.characterProfilePicture.image = self.characterPhoto
+        }
     }
 }
