@@ -32,7 +32,7 @@ class StarWarsCharacterNetworkController {
                 for character in StarWarsCharacterPersistence.shared.characterList {
                     guard let id = character.id, let firstName = character.firstName, let lastName = character.lastName, let birthdate = character.birthdate, let profilePicture = character.profilePicture, let forceSensitive = character.forceSensitive, let affiliation = character.affiliation else { return }
                     StarWarsCharacterPersistence.shared.addCharacterWith(id: id, firstName: firstName, lastName: lastName, birthdate: birthdate, profilePicture: profilePicture, forceSensitive: forceSensitive, affilitation: affiliation)
-                    print("Character \(character.firstName), added")
+                    print("Character \(character.firstName) \(character.lastName), added")
                 }
                 completion(characterList)
             } catch let error {

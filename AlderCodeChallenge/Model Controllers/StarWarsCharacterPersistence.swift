@@ -37,9 +37,9 @@ class StarWarsCharacterPersistence {
     
     // Add Image
     func addImage(image: UIImage, for character: StarWarsCharacter) {
-        guard let firstName = character.firstName else { return }
+        guard let pictureURL = character.profilePicture else { return }
         guard let imageData = UIImagePNGRepresentation(image) else { return }
-        imageDictionary.updateValue(imageData, forKey: firstName)
+        imageDictionary.updateValue(imageData, forKey: pictureURL)
         saveToPersistence()
     }
     
